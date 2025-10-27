@@ -43,7 +43,7 @@ export default function RootLayout({
           {/* Colorful gradient overlay */}
           <div className="absolute inset-0">
             <div className="relative h-full w-full">
-              <div className="absolute inset-0 bg-blue-300 opacity-20 blur-[100px]"></div>
+              <div className="absolute inset-0 bg-blue-300 opacity-23 blur-[100px]"></div>
             </div>
           </div>
         </div>
