@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Starfield from '@/components/Starfield';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-black"></div>
+          <Starfield
+            starCount={500}
+            starColor={[255, 255, 255]}
+            speedFactor={0.05}
+            backgroundColor="rgba(0, 0, 0, 0.7)"
+          />
+
+          {/* Colorful gradient overlay */}
+          <div className="absolute inset-0">
+            <div className="relative h-full w-full">
+              <div className="absolute inset-0 bg-blue-300 opacity-20 blur-[100px]"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="z-10 relative">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+
+
+
       </body>
     </html>
   );

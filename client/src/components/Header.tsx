@@ -6,13 +6,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Left side - Logo/Name */}
-          <div className="flex items-center pb-3.5 text-2xl font-bold bg-gradient-to-r from-[#ffffff] to-[#9ae0f5] to-[#37caf6] bg-clip-text text-transparent">
+          <div className="flex items-center pb-3.5 text-2xl font-bold bg-gradient-to-r from-[#ffd8b6] to-[#ffbd84] to-[#f8a55d] to-[#f89034] to-[#fb6400] bg-clip-text text-transparent">
             Ishmaam
           </div>
 
           <div className='flex items-center'>
             {/* Right side - Navigation */}
-            <nav className="flex gap-6 [&_a]:pb-3.5 [&_a]:border-transparent [&_a]:border-spacing-y-10  [&_a]:border-b-10  [&_a]:px-3  [&_a:hover]:border-b-amber-500  [&_a:hover]:scale-104  [&_a:hover]:bg-[#4e4747] [&_a]:rounded-lg">
+            <nav className="flex font-semibold font-sans gap-6 [&_a]:pb-3.5 [&_a]:border-transparent [&_a]:border-spacing-y-10  [&_a]:border-b-10  [&_a]:px-3  [&_a:hover]:border-b-amber-500  [&_a:hover]:scale-104  [&_a:hover]:bg-[#4e4747] [&_a]:rounded-lg">
               <a
                 href="#home"
                 className="text-[#caced4]  transition-colors duration-200"
@@ -29,19 +29,25 @@ export default function Header() {
                 href="#project"
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
               >
-                Project
+                Projects
               </a>
               <a
                 href="#achievement"
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
               >
-                Achievement
+                Achievements
               </a>
               <a
                 href="#contact"
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
               >
                 Contact Me
+              </a>
+              <a
+                href="#contact"
+                className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
+              >
+                About Me
               </a>
             </nav>
           </div>
