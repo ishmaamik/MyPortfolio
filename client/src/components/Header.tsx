@@ -19,6 +19,13 @@ export default function Header() {
               >
                 Home
               </a>
+              
+              <a
+                href="#about"
+                className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
+              >
+                About Me
+              </a>
               <a
                 href="#education"
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
@@ -42,12 +49,6 @@ export default function Header() {
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
               >
                 Contact Me
-              </a>
-              <a
-                href="#contact"
-                className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
-              >
-                About Me
               </a>
             </nav>
           </div>
