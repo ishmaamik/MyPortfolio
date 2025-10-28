@@ -45,7 +45,7 @@ export default function HomePage() {
       }, [displayText, isDeleting, currentIndex]);
     return (
         <>
-            <div className="flex justify-start">
+            <div className="flex justify-start pb-[30px]">
                 <Image src="/ishuwu.jpg" alt="" height={600} width={500} className="" />
             </div>
             <div className="text-center pt-40 flex-1">
