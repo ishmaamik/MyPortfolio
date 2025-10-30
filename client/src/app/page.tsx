@@ -1,5 +1,6 @@
 "use client"
 import AboutMe from "@/components/AboutMe";
+import Achievements from "@/components/Achievements";
 import Education from "@/components/Education";
 import HomePage from "@/components/HomePage";
 import Projects from "@/components/Projects";
@@ -15,7 +16,7 @@ export default function Home() {
       <div id="about">
         <AboutMe/>
       </div>
-      
+
       <div id="education" className="pb-[100px] ">
         <Education/>
       </div>
@@ -24,7 +25,9 @@ export default function Home() {
         <Projects/>
       </div>
 
-      
+      <div id="achievements" className="pb-[100px] ">
+        <Achievements/>
+      </div>
 
     </div>
 
