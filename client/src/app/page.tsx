@@ -1,6 +1,7 @@
 "use client"
 import AboutMe from "@/components/AboutMe";
 import HomePage from "@/components/HomePage";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
 
       <div id="about">
         <AboutMe/>
+      </div>
+
+      <div id="project" className="pb-[100px] ">
+        <Projects/>
       </div>
 
     </div>

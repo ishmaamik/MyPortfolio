@@ -10,7 +10,7 @@ export default function AboutMe() {
     ]
     return (
         <>
-            <div className="flex p-20 gap-60 h-[1000px] text-white justify-center">
+            <div className="flex p-20 gap-60 h-[600px] text-white justify-center">
                 <div className="flex flex-col">
                     <div>
                         <p className="text-5xl font-semibold pb-10">About Me</p>
@@ -20,7 +20,7 @@ export default function AboutMe() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 grid-rows-4 gap-10">
+                <div className="grid grid-cols-2 grid-rows-2 gap-20">
                     {
                         achievements.map((p, index)=>(
                             <div key={index} className="bg-[#1f243f] h-[200px] w-full rounded-2xl pb-[20px] flex flex-col text-center justify-center items-center">
