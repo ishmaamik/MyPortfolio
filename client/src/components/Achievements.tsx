@@ -48,10 +48,10 @@ export default function Achievements() {
       <div className='w-full p-20'>
         <p className='text-white text-5xl font-semibold'>Achievements</p>
       </div>
-      <div ref={containerRef} className="h-[400vh] relative">
+      <div ref={containerRef} className="h-[370vh] relative">
         <div className="flex justify-center items-start  sticky ">
           <div
-            className="bg-gray-300 h-[2500px] w-[10px] relative"
+            className="bg-gray-300 h-[2200px] w-[10px] relative"
           >
             {/* Progress bar background */}
             <div className="bg-gray-300 h-full w-full absolute top-0 left-0"></div>
