@@ -59,7 +59,7 @@ export default function Projects() {
 
             {/* Progress bar fill */}
             <div
-              className="bg-red-500 w-full transition-all duration-100 ease-out absolute top-0 left-0"
+              className="bg-red-400 w-full transition-all duration-100 ease-out absolute top-0 left-0"
               style={{ height: `${scrollProgress}%` }}
             ></div>
 

@@ -70,7 +70,7 @@ export default function Achievements() {
               return (
                 <div
                   key={project.id}
-                  className={`absolute left-1/2 transform  -translate-x-1/2 -translate-y-1/2 rounded-full h-6 w-6 border-4 border-white transition-colors duration-300 z-10 ${isActive ? 'bg-green-300' : 'bg-gray-300'
+                  className={`absolute left-1/2 transform  -translate-x-1/2 -translate-y-1/2 rounded-full h-6 w-6 border-4 border-white transition-colors duration-300 z-10 ${isActive ? 'bg-green-500' : 'bg-gray-300'
                     }`}
                   style={{ top: `${position}%` }}
                 >

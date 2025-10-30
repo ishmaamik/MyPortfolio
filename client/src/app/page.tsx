@@ -17,15 +17,15 @@ export default function Home() {
         <AboutMe/>
       </div>
 
-      <div id="education" className="pb-[100px] ">
+      <div id="education" className="">
         <Education/>
       </div>
 
-      <div id="project" className="pb-[100px] ">
+      <div id="project" className=" ">
         <Projects/>
       </div>
 
-      <div id="achievements" className="pb-[100px] ">
+      <div id="achievements" className=" ">
         <Achievements/>
       </div>
 

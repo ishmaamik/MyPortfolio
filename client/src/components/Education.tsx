@@ -60,7 +60,7 @@ export default function Education() {
 
                         {/* Progress bar fill */}
                         <div
-                            className="bg-blue-500 w-full transition-all duration-100 ease-out absolute top-0 left-0"
+                            className="bg-blue-300 w-full transition-all duration-100 ease-out absolute top-0 left-0"
                             style={{ height: `${scrollProgress}%` }}
                         ></div>
 

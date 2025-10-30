@@ -39,7 +39,7 @@ export default function Header() {
                 Projects
               </a>
               <a
-                href="#achievement"
+                href="#achievements"
                 className="text-[#caced4] hover:text-[#caced4] transition-colors duration-200"
               >
                 Achievements
