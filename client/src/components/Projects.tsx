@@ -1,4 +1,6 @@
 import { projects } from '@/data/projects';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 
 type ProjectsData = {
@@ -6,6 +8,7 @@ type ProjectsData = {
   title: string;
   description: string;
   image: string;
+  githubUrl:string;
 };
 
 export default function Projects() {
@@ -76,6 +79,7 @@ export default function Projects() {
                     <img src={project.image} alt=""  className='rounded-2xl' />
                     <p className='text-white text-[20px] font-semibold'>{project.title}</p>
                     <p className='break-words text-white font-semibold text-[18px] text-wrap line-clamp-auto '>{project.description}</p>
+                    <Link href={project.githubUrl} className='text-white text-[20px] font-semibold flex items-center'>Github Link <ChevronRight/></Link>
                   </span>
                 </div>
               );
