@@ -4,7 +4,8 @@ export default function AboutMe() {
     const achievements = [
         { number: "200+", title: "Problems Solved", icon: "/leetcode.svg" },
         { number: "10+", title: "Projects Completed", icon: <Briefcase /> },
-        { number: "5+", title: "Competitions Participated", icon: "hackathon.png" }
+        { number: "5+", title: "Competitions Participated", icon: "hackathon.png" },
+        { number: "10+", title: "Articles Written", icon: "medium.svg" }
     ]
 
     return (
