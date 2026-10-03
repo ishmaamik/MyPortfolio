@@ -2,9 +2,9 @@ import { Badge, Briefcase, Code } from "lucide-react"
 
 export default function AboutMe() {
     const achievements = [
-        { number: "100+", title: "Problems Solved", icon: <Badge /> },
+        { number: "200+", title: "Problems Solved", icon: "/leetcode.svg" },
         { number: "10+", title: "Projects Completed", icon: <Briefcase /> },
-        { number: "5+", title: "Competitions Participated", icon: <Code /> }
+        { number: "5+", title: "Competitions Participated", icon: "hackathon.png" }
     ]
 
     return (
@@ -27,7 +27,11 @@ export default function AboutMe() {
                         className="bg-[#1f243f] h-[200px] w-[400px] rounded-2xl flex flex-col justify-center items-center"
                     >
                         <div className="text-blue-400">
-                            {p.icon}
+                            {typeof p.icon === "string" ? (
+                                <img src={p.icon} alt={p.title} className="w-10 h-10" />
+                            ) : (
+                                p.icon
+                            )}
                         </div>
 
                         <p className="text-5xl font-semibold pt-[15px]">

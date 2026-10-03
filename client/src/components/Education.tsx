@@ -1,7 +1,5 @@
 import { education } from '@/data/education';
-import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 export type EducationData = {
     id: number;
@@ -17,76 +15,69 @@ export default function Education() {
     const [scrollProgress, setScrollProgress] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!containerRef.current) return;
+    const handleScroll = () => {
+        const container = containerRef.current;
+        if (!container) return;
 
-            const container = containerRef.current;
-            const rect = container.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            // Calculate progress based on the container's position
-            const containerTop = rect.top;
-            const containerHeight = rect.height;
-
-            // Start: when container top hits top of viewport (enters view)
-            // End: when container bottom hits bottom of viewport (exits view)
-            const startPoint = windowHeight;
-            const endPoint = windowHeight - containerHeight;
-
-            const progress = ((startPoint - containerTop) / (startPoint - endPoint)) * 100;
-
-            setScrollProgress(Math.min(100, Math.max(0, progress)));
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll(); // Initial calculation
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        setScrollProgress(maxScroll > 0 ? (container.scrollLeft / maxScroll) * 100 : 0);
+    };
 
     return (
         <>
-            <div className='justify-center items-center text-center w-full p-5'>
+            <div className='justify-center items-center text-center w-full p-10'>
                 <p className='text-white text-5xl font-semibold'>Education</p>
             </div>
-            <div ref={containerRef} className="h-[160vh] relative p-15">
-                <div className="flex justify-center items-start  sticky ">
-                    <div
-                        className="bg-gray-300 h-[1000px] w-[10px] relative"
+            <div
+                ref={containerRef}
+                onScroll={handleScroll}
+                className="relative w-full overflow-x-auto overflow-y-hidden px-6 py-8 scroll-smooth snap-x snap-mandatory"
+            >
+                <div className="relative mx-auto flex w-max items-stretch gap-8 px-4">
+                    <div className="absolute top-1/2 h-1 -translate-y-1/2 bg-gray-300"
+                        style={{ left: 'calc(1rem + min(62.5vw, 30px))', right: 'calc(1rem + min(42.5vw, 30px))' }}
                     >
-                        {/* Progress bar background */}
-                        <div className="bg-gray-300 h-full w-full absolute top-0 left-0"></div>
-
-                        {/* Progress bar fill */}
                         <div
-                            className="bg-blue-300 w-full transition-all duration-100 ease-out absolute top-0 left-0"
-                            style={{ height: `${scrollProgress}%` }}
-                        ></div>
-
-                        {/* Dynamic circles */}
-                        {educationList.map((education, index) => {
-                            const position = (index / (educationList.length - 1 || 1)) * 100;
-                            const isActive = scrollProgress >= position;
-
-                            return (
-                                <div
-                                    key={education.id}
-                                    className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full h-6 w-6 border-4 border-white transition-colors duration-300 z-10 ${isActive ? 'bg-blue-500' : 'bg-gray-300'
-                                        }`}
-                                    style={{ top: `${position}%` }}
-                                >
-                                    <span className={`absolute ${education.id % 2 ? `right-50 h-[400px]` : `left-50  h-[400px]`} gap-2 whitespace-nowrap flex flex-col   text-sm font-medium  rounded  w-[400px]`}>
-                                        <img src={education.imageUrl} alt="" className='rounded-2xl w-[250px]' />
-                                        <p className='text-white text-[20px] font-semibold'>{education.school}</p>
-                                        <p className='text-white text-[18px] font-semibold'>{education.title}</p>
-                                        <p className='break-words text-white font-semibold text-[18px] text-wrap line-clamp-auto '>{education.date}</p>
-                                        <p className='text-white text-[18px] font-semibold flex items-center'>{education.result}</p>
-                                    </span>
-                                </div>
-                            );
-                        })}
+                            className="h-full bg-blue-300 transition-[width] duration-100 ease-out"
+                            style={{ width: `${scrollProgress}%` }}
+                        />
                     </div>
+                    {educationList.map((item, index) => {
+                        const position = (index / (educationList.length - 1 || 1)) * 100;
+                        const isActive = scrollProgress >= position;
+                        const details = (
+                            <div className="flex aspect-square w-[320px] max-w-full flex-col gap-2 overflow-y-auto rounded-2xl border border-white/15 bg-white/5 p-5">
+                                <p className="text-xl font-semibold text-white">{item.school}</p>
+                                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                                <p className="whitespace-normal break-words text-base font-medium text-white">{item.date}</p>
+                                {item.result && <p className="text-lg font-semibold text-white">{item.result}</p>}
+                            </div>
+                        );
+
+                        return (
+                            <article
+                                key={item.id}
+                                className="relative z-10 grid w-[min(85vw,400px)] shrink-0 snap-center grid-rows-[minmax(320px,auto)_24px_minmax(320px,auto)]"
+                            >
+                                <div className={`flex justify-center py-6 ${index % 2 === 0 ? 'items-end' : 'items-start'}`}>
+                                    {index % 2 === 0 ? (
+                                        <img src={item.imageUrl} alt={item.school} className="h-auto max-w-full rounded-2xl object-contain" />
+                                    ) : details}
+                                </div>
+                                <div
+                                    className="mx-auto h-6 w-6 rounded-full border-4 border-white transition-colors duration-300"
+                                    style={{ backgroundColor: isActive ? '#3b82f6' : '#d1d5db' }}
+                                />
+                                <div className={`flex justify-center py-6 ${index % 2 === 0 ? 'items-start' : 'items-end'}`}>
+                                    {index % 2 === 0 ? (
+                                        details
+                                    ) : (
+                                        <img src={item.imageUrl} alt={item.school} className="h-auto max-w-full rounded-2xl object-contain" />
+                                    )}
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
             </div>
         </>

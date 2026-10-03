@@ -8,14 +8,6 @@ export type AchievementsData = {
   };
   export const achievements: AchievementsData[] = [
     {
-      id: 1,
-      title: "Honorable Mention",
-      contest:"KUET CSE BitFest Project Showcase",
-      description:
-        "On 3rd of January 2025, our team IUT_ACCESS_DENIED participated in KUET BITFEST Project Showcase where we demonstrated our Waste Zero BD and we achieved the honorable mention!",
-      image: "honorable_kuet.jpg",
-    },
-    {
       id: 2,
       title: "4th Runners Up",
       contest:"UIU CSE Fest Project Showcase",
