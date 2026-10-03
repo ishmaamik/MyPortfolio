@@ -9,23 +9,23 @@ export default function Home() {
   return (
     <div className="">
 
-      <div className="flex " id="home">
+      <div className="flex scroll-mt-16" id="home">
         <HomePage/>
       </div>
 
-      <div id="about" className="">
+      <div id="about" className="scroll-mt-16">
         <AboutMe/>
       </div>
 
-      <div id="education" className="">
+      <div id="education" className="scroll-mt-16">
         <Education/>
       </div>
 
-      <div id="project" className=" ">
+      <div id="project" className="scroll-mt-16">
         <Projects/>
       </div>
 
-      <div id="achievements" className=" ">
+      <div id="achievements" className="scroll-mt-16">
         <Achievements/>
       </div>
 
