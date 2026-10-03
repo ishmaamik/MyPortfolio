@@ -45,10 +45,10 @@ export default function Achievements() {
 
   return (
     <>
-      <div className='w-full p-20'>
-        <p className='text-white text-5xl font-semibold'>Achievements</p>
+      <div className='w-full  text-center pb-24'>
+        <p className='text-white text-5xl font-semibold '>Achievements</p>
       </div>
-      <div ref={containerRef} className="h-[370vh] relative">
+      <div ref={containerRef} className="h-[295vh] relative">
         <div className="flex justify-center items-start  sticky ">
           <div
             className="bg-gray-300 h-[2200px] w-[10px] relative"

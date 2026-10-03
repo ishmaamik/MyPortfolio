@@ -47,10 +47,10 @@ export default function Education() {
 
     return (
         <>
-            <div className='w-full p-20'>
+            <div className='justify-center items-center text-center w-full p-5'>
                 <p className='text-white text-5xl font-semibold'>Education</p>
             </div>
-            <div ref={containerRef} className="h-[200vh] relative">
+            <div ref={containerRef} className="h-[160vh] relative p-15">
                 <div className="flex justify-center items-start  sticky ">
                     <div
                         className="bg-gray-300 h-[1000px] w-[10px] relative"

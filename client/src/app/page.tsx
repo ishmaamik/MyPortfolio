@@ -7,13 +7,13 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
 
-      <div className="flex w-full" id="home">
+      <div className="flex " id="home">
         <HomePage/>
       </div>
 
-      <div id="about">
+      <div id="about" className="">
         <AboutMe/>
       </div>
 
