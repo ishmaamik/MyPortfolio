@@ -9,6 +9,7 @@ type ProjectsData = {
   description: string;
   image: string;
   githubUrl:string;
+  deployUrl?:string
 };
 
 export default function Projects() {
@@ -75,11 +76,18 @@ export default function Projects() {
                     }`}
                   style={{ top: `${position}%` }}
                 >
-                  <span className={`absolute ${project.id % 2 ? `right-30 h-[400px]` : `left-30  h-[400px]`} whitespace-nowrap flex flex-col items-center gap-4 text-sm font-medium   rounded  w-[600px]`}>
+                  <span className={`absolute ${project.id % 2 ? `right-30 h-[400px]` : `left-30  h-[400px]`} whitespace-nowrap flex flex-col items-center gap-3 text-sm font-medium   rounded  w-[600px]`}>
                     <img src={project.image} alt=""  className='rounded-2xl' />
                     <p className='text-white text-[20px] font-semibold'>{project.title}</p>
-                    <p className='break-words text-white font-semibold text-[18px] text-wrap line-clamp-auto '>{project.description}</p>
+                    {project.description.split('\n\n').map((paragraph, paragraphIndex) => (
+                      <p key={paragraphIndex} className='break-words text-white font-semibold text-[18px] text-wrap line-clamp-auto '>
+                        {paragraph}
+                      </p>
+                    ))}
                     <Link href={project.githubUrl} className='text-white text-[20px] font-semibold flex items-center'>Github Link <ChevronRight/></Link>
+                    {project.deployUrl && (
+                      <Link href={project.deployUrl} className='text-white text-[20px] font-semibold flex items-center'>Deploy Link <ChevronRight/></Link>
+                    )}
                   </span>
                 </div>
               );

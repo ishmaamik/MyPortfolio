@@ -4,6 +4,7 @@ import Achievements from "@/components/Achievements";
 import Education from "@/components/Education";
 import HomePage from "@/components/HomePage";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -15,6 +16,10 @@ export default function Home() {
 
       <div id="about" className="scroll-mt-16">
         <AboutMe/>
+      </div>
+
+      <div id="skills" className="scroll-mt-16">
+        <Skills/>
       </div>
 
       <div id="education" className="scroll-mt-16">

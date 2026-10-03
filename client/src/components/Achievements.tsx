@@ -45,7 +45,7 @@ export default function Achievements() {
 
   return (
     <>
-      <div className='w-full  text-center pb-24'>
+      <div className='w-full text-center pb-6'>
         <p className='text-white text-5xl font-semibold '>Achievements</p>
       </div>
       <div ref={containerRef} className="h-[220vh] relative">

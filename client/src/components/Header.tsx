@@ -40,8 +40,8 @@ export default function Header() {
                 <div className="flex justify-between items-center py-4">
 
                     {/* Logo */}
-                    <div className="flex items-center pb-3.5 text-2xl font-bold bg-gradient-to-r from-[#ffd8b6] via-[#ffbd84] via-[#f8a55d] via-[#f89034] to-[#fb6400] bg-clip-text text-transparent">
-                        Ishmaam
+                    <div className="flex items-center pb-3.5 text-xl font-bold text-white bg-clip-text text-transparent">
+                        Ishmaam Iftekhar Khan
                     </div>
 
                     {/* Navigation */}
@@ -59,6 +59,13 @@ export default function Header() {
                             className={navLinkClassName}
                         >
                             About Me
+                        </a>
+
+                        <a
+                            href="#skills"
+                            className={navLinkClassName}
+                        >
+                            Skills
                         </a>
 
                         <a
