@@ -17,7 +17,7 @@ export default function AboutMe() {
                 </p>
 
                 <p className="text-4xl w-[500px] text-gray-300">
-                    Currently working as a Software Engineering Intern at RedDot Digital Limited
+                    Previously worked as a Software Engineering Intern at RedDot Digital Limited
                 </p>
             </div>
 
