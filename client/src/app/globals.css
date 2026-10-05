@@ -27,6 +27,12 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {

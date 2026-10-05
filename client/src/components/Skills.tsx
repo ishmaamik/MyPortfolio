@@ -70,7 +70,7 @@ const skillGroups = [
 
 export default function Skills() {
     return (
-        <section className="w-full px-6 py-24 text-white sm:px-10" aria-labelledby="skills-heading">
+        <section className="w-full px-6 lg:pt-3 text-white sm:px-10" aria-labelledby="skills-heading">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-12 text-center">
                     <h2 id="skills-heading" className="text-5xl font-semibold">

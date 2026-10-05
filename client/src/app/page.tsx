@@ -10,27 +10,27 @@ export default function Home() {
   return (
     <div className="">
 
-      <div className="flex scroll-mt-16" id="home">
+      <div className="flex" id="home">
         <HomePage/>
       </div>
 
-      <div id="about" className="scroll-mt-16">
+      <div id="about">
         <AboutMe/>
       </div>
 
-      <div id="skills" className="scroll-mt-16">
+      <div id="skills">
         <Skills/>
       </div>
 
-      <div id="education" className="scroll-mt-16">
+      <div id="education">
         <Education/>
       </div>
 
-      <div id="project" className="scroll-mt-16">
+      <div id="project">
         <Projects/>
       </div>
 
-      <div id="achievements" className="scroll-mt-16">
+      <div id="achievements">
         <Achievements/>
       </div>
 

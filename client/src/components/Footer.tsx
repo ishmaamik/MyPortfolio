@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <>
-        <footer id="contact" className="scroll-mt-16 px-5 pb-16 pt-4 text-white sm:px-8 sm:pt-4">
+        <footer id="contact" className="px-4 pb-10 pt-4 text-white sm:px-8 sm:pb-16 sm:pt-4">
             <section className="relative mx-auto max-w-5xl overflow-hidden border border-white/10 bg-[#111116]/90 px-6 py-10 shadow-2xl shadow-black/20 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
-                <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-blue-500/10 blur-[100px]" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-blue-500/10 blur-[100px]" />
                 <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-orange-400/5 blur-[100px]" />
                 <div className="relative">
                     <p className="mb-3 text-sm font-medium tracking-wide text-gray-300">
@@ -29,7 +29,7 @@ export default function Footer() {
                             href="mailto:ishmaam@iut-dhaka.edu"
                             className="inline-flex items-center gap-3 bg-blue-300 px-5 py-3 font-semibold text-[#111116] transition-colors hover:bg-blue-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300"
                         >
-                            Email 
+                            Email
                             <ArrowUpRight size={18} aria-hidden="true" />
                         </a>
                         <a
@@ -71,11 +71,11 @@ export default function Footer() {
             </section>
 
         </footer>
-        <div className=" bottom-0 left-0 z-40 flex h-24 w-full items-center justify-between border-t border-white/10 bg-[#151420]/95 px-5 text-sm text-white backdrop-blur-md sm:px-8">
-            <p className="text-xs text-gray-400 sm:text-sm ml-12">
+        <div className="flex w-full flex-col items-center justify-between gap-4 border-t border-white/10 bg-[#151420]/95 px-4 py-5 text-center text-sm text-white backdrop-blur-md sm:flex-row sm:px-8 sm:py-6 sm:text-left">
+            <p className="text-xs text-gray-400 sm:text-sm">
                 © 2025 All rights reserved by Ishmaam Iftekhar Khan
             </p>
-            <div className="mr-14 flex items-center gap-15 sm:mr-16">
+            <div className="flex items-center gap-8 sm:gap-10">
                 <a
                     href="https://github.com/ishmaamik"
                     target="_blank"

@@ -1,85 +1,44 @@
 import { education } from '@/data/education';
-import { useState, useRef } from 'react';
+import Image from 'next/image';
 
 export type EducationData = {
     id: number;
     title: string;
     date: string;
     result?: string;
-    school:string;
+    school: string;
     imageUrl: string;
-  };
+};
 
 export default function Education() {
     const educationList: EducationData[] = education;
-    const [scrollProgress, setScrollProgress] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    const handleScroll = () => {
-        const container = containerRef.current;
-        if (!container) return;
-
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        setScrollProgress(maxScroll > 0 ? (container.scrollLeft / maxScroll) * 100 : 0);
-    };
 
     return (
-        <>
-            <div className='justify-center items-center text-center w-full p-10'>
-                <p className='text-white text-5xl font-semibold'>Education</p>
+        <section className=" w-full px-4 pb-12 sm:px-8 lg:pt-32 pt-10 lg:px-10" aria-labelledby="education-heading">
+            <h2 id="education-heading" className="mb-10 text-center text-3xl font-semibold text-white sm:mb-12 sm:text-5xl">
+                Education
+            </h2>
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-16 xl:grid-cols-3 xl:gap-12 2xl:max-w-7xl">
+                {educationList.map((item) => (
+                    <article key={item.id} className="overflow-hidden rounded-2xl border border-white/15 bg-[#1f243f]/90 shadow-lg shadow-black/10">
+                        <div className="relative h-48 bg-white/5 p-4 sm:h-56">
+                            <Image
+                                src={`/${item.imageUrl.replace(/^\/+/, '')}`}
+                                alt={item.school}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                className="object-contain p-4"
+                            />
+                        </div>
+                        <div className="p-4 sm:p-6">
+                            <p className="text-sm font-semibold uppercase tracking-wide text-blue-300 sm:text-base">{item.school}</p>
+                            <h3 className="mt-2 text-xl font-semibold text-white sm:text-2xl">{item.title}</h3>
+                            <p className="mt-3 break-words text-sm leading-relaxed text-gray-200 sm:text-base">{item.date}</p>
+                            {item.result && <p className="mt-4 text-lg font-semibold text-white">{item.result}</p>}
+                        </div>
+                    </article>
+                ))}
             </div>
-            <div
-                ref={containerRef}
-                onScroll={handleScroll}
-                className="relative w-full overflow-x-auto overflow-y-hidden px-6 py-8 scroll-smooth snap-x snap-mandatory"
-            >
-                <div className="relative mx-auto flex w-max items-stretch gap-8 px-4">
-                    <div className="absolute top-1/2 h-1 -translate-y-1/2 bg-gray-300"
-                        style={{ left: 'calc(1rem + min(62.5vw, 30px))', right: 'calc(1rem + min(42.5vw, 30px))' }}
-                    >
-                        <div
-                            className="h-full bg-blue-300 transition-[width] duration-100 ease-out"
-                            style={{ width: `${scrollProgress}%` }}
-                        />
-                    </div>
-                    {educationList.map((item, index) => {
-                        const position = (index / (educationList.length - 1 || 1)) * 100;
-                        const isActive = scrollProgress >= position;
-                        const details = (
-                            <div className="flex aspect-square w-[320px] max-w-full flex-col gap-2 overflow-y-auto rounded-2xl border border-white/15 bg-white/5 p-5">
-                                <p className="text-xl font-semibold text-white">{item.school}</p>
-                                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                                <p className="whitespace-normal break-words text-base font-medium text-white">{item.date}</p>
-                                {item.result && <p className="text-lg font-semibold text-white">{item.result}</p>}
-                            </div>
-                        );
-
-                        return (
-                            <article
-                                key={item.id}
-                                className="relative z-10 grid w-[min(85vw,400px)] shrink-0 snap-center grid-rows-[minmax(320px,auto)_24px_minmax(320px,auto)]"
-                            >
-                                <div className={`flex justify-center py-6 ${index % 2 === 0 ? 'items-end' : 'items-start'}`}>
-                                    {index % 2 === 0 ? (
-                                        <img src={item.imageUrl} alt={item.school} className="h-auto max-w-full rounded-2xl object-contain" />
-                                    ) : details}
-                                </div>
-                                <div
-                                    className="mx-auto h-6 w-6 rounded-full border-4 border-white transition-colors duration-300"
-                                    style={{ backgroundColor: isActive ? '#3b82f6' : '#d1d5db' }}
-                                />
-                                <div className={`flex justify-center py-6 ${index % 2 === 0 ? 'items-start' : 'items-end'}`}>
-                                    {index % 2 === 0 ? (
-                                        details
-                                    ) : (
-                                        <img src={item.imageUrl} alt={item.school} className="h-auto max-w-full rounded-2xl object-contain" />
-                                    )}
-                                </div>
-                            </article>
-                        );
-                    })}
-                </div>
-            </div>
-        </>
+        </section>
     );
 }

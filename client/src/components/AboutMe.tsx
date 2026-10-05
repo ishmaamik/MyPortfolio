@@ -1,51 +1,52 @@
-import { Badge, Briefcase, Code } from "lucide-react"
+import { Briefcase, Trophy } from "lucide-react"
+import Image from "next/image";
 
 export default function AboutMe() {
     const achievements = [
         { number: "200+", title: "Problems Solved", icon: "/leetcode.svg" },
         { number: "10+", title: "Projects Completed", icon: <Briefcase /> },
-        { number: "5+", title: "Competitions Participated", icon: "hackathon.png" },
+        { number: "5+", title: "Competitions Participated", icon: <Trophy /> },
         { number: "10+", title: "Articles Written", icon: "medium.svg" }
     ]
 
     return (
-        <div className="min-h-screen w-full flex flex-col justify-center items-center text-white text-center">
+        <section className="flex w-full flex-col items-center justify-center px-4 py-12 text-center text-white sm:px-8 lg:min-h-screen lg:px-10 lg:py-12" aria-labelledby="about-heading">
 
-            <div>
-                <p className="text-5xl font-semibold pb-10">
+            <div className="w-full max-w-4xl">
+                <h2 id="about-heading" className="pb-6 text-3xl font-semibold sm:pb-10 sm:text-5xl">
                     About Me
-                </p>
+                </h2>
 
-                <p className="text-4xl w-[500px] text-gray-300">
+                <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300 sm:text-2xl md:text-3xl lg:text-4xl">
                     Previously worked as a Software Engineering Intern at RedDot Digital Limited
                 </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-20 mt-20">
+            <div className="mt-8 grid w-full max-w-5xl grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:gap-8 xl:gap-10">
                 {achievements.map((p, index) => (
                     <div
                         key={index}
-                        className="bg-[#1f243f] h-[200px] w-[400px] rounded-2xl flex flex-col justify-center items-center"
+                        className="flex min-h-40 flex-col items-center justify-center rounded-2xl bg-[#1f243f] p-5 sm:min-h-48 sm:p-6"
                     >
-                        <div className="text-blue-400">
+                        <div className="text-blue-400 [&_svg]:h-8 [&_svg]:w-8">
                             {typeof p.icon === "string" ? (
-                                <img src={p.icon} alt={p.title} className="w-10 h-10" />
+                                <Image src={p.icon} alt="" width={40} height={40} className="h-10 w-10" />
                             ) : (
                                 p.icon
                             )}
                         </div>
 
-                        <p className="text-5xl font-semibold pt-[15px]">
+                        <p className="pt-3 text-4xl font-semibold sm:text-5xl">
                             {p.number}
                         </p>
 
-                        <p className="text-3xl pt-[15px]">
+                        <p className="pt-2 text-lg sm:text-xl lg:text-2xl">
                             {p.title}
                         </p>
                     </div>
                 ))}
             </div>
 
-        </div>
+        </section>
     )
 }
