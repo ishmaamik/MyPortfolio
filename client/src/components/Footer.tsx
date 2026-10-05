@@ -73,7 +73,7 @@ export default function Footer() {
         </footer>
         <div className="flex w-full flex-col items-center justify-between gap-4 border-t border-white/10 bg-[#151420]/95 px-4 py-5 text-center text-sm text-white backdrop-blur-md sm:flex-row sm:px-8 sm:py-6 sm:text-left">
             <p className="text-xs text-gray-400 sm:text-sm">
-                © 2025 All rights reserved by Ishmaam Iftekhar Khan
+                © 2026 All rights reserved by Ishmaam Iftekhar Khan
             </p>
             <div className="flex items-center gap-8 sm:gap-10">
                 <a
